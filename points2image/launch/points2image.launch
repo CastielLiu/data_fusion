@@ -1,0 +1,12 @@
+<!-- -->
+
+<launch>
+
+	<node pkg="points2image" type="points2image" name="points2image_node" output="screen" ns="/camera4">
+		<param name="calibration_file" value="$(find points2image)/test.yml"/>
+		<param name="points_topic" value="/velodyne_points"/>
+		
+	</node>
+
+</launch>
+
