@@ -91,15 +91,19 @@ public:
 	{
 		ros::NodeHandle node_handle("~");//to receive args
 
-		std::string image_raw_topic_str, camera_info_topic_str, image_rectified_str = "/image_rectified";
+		std::string image_raw_topic_str, camera_info_topic_str, image_rectified_str;
 		std::string name_space_str = ros::this_node::getNamespace();
 
 		node_handle.param<std::string>("image_src", image_raw_topic_str, "/image_raw");
-
+		node_handle.param<std::string>("image_dst", image_rectified_str, "/image_rectified");
+		
+		
 		node_handle.param<std::string>("camera_info_src", camera_info_topic_str, "/camera_info");
 
-		if (name_space_str != "/") {
-			if (name_space_str.substr(0, 2) == "//") {
+		if (name_space_str != "/") 
+		{
+			if (name_space_str.substr(0, 2) == "//") 
+			{
 				/* if name space obtained by ros::this::node::getNamespace()
 				   starts with "//", delete one of them */
 				name_space_str.erase(name_space_str.begin());
