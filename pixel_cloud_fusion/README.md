@@ -2,6 +2,7 @@
 
 ## Pixel-Cloud fusion node
 
+节点投影点云到图像空间，提取对应的RGB信息，将RGB信息填充到雷达点，然后发布带颜色的点云
 This node projects PointCloud to Image space, extracts RGB information from the Image, back-projects it to LiDAR space, and finally publishes a Colored PointCloud.
 
 ### Requirements
